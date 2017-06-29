@@ -104,7 +104,7 @@ public class TestColumnMappers
         }
     }
 
-    public interface SomeBeanDao
+    interface SomeBeanDao
     {
         @RegisterBeanMapper(SomeBean.class)
         @RegisterColumnMapper(ValueTypeMapper.class)

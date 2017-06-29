@@ -61,7 +61,7 @@ public class TestRegisterJoinRowMapper
     }
 
     // tag::joinrowdao[]
-    public interface UserArticleDao
+    interface UserArticleDao
     {
         @RegisterJoinRowMapper({User.class, Article.class})
         @SqlQuery("SELECT * FROM user NATURAL JOIN author NATURAL JOIN article")

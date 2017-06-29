@@ -67,7 +67,7 @@ public class TestSqlCall
         assertThat(handle.attach(Dao.class).findById(1)).isEqualTo(new Something(1, "Jeff"));
     }
 
-    public interface Dao
+    interface Dao
     {
         @SqlCall("call stored_insert(:id, :name)")
         void insert(@Bind("id") int id, @Bind("name") String name);

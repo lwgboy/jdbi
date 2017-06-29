@@ -129,7 +129,7 @@ public class TestDefineListParameter
     }
 
     @RegisterRowMapper(SomethingMapper.class)
-    public interface TestDao
+    interface TestDao
     {
         @SqlUpdate("insert into <table> (<columns>) values (<values>)")
         void insert(@Define("table") String table, @DefineList("columns") List<String> columns, @BindList List<Object> values);

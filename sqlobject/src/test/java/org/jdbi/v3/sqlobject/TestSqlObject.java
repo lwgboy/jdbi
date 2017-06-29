@@ -293,7 +293,7 @@ public class TestSqlObject
         }
     }
 
-    public interface BaseDao<T> {
+    interface BaseDao<T> {
         void insert(T obj);
         T get(long id);
     }

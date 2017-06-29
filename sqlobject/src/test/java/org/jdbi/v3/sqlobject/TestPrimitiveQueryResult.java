@@ -103,7 +103,7 @@ public class TestPrimitiveQueryResult
         dao.getDouble(2);
     }
 
-    public interface PrimitiveDao {
+    interface PrimitiveDao {
         @SqlUpdate("insert into something(id, name) values (:id, :name)")
         void insert(int id, String name);
 

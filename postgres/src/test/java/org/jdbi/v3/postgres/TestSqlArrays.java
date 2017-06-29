@@ -219,7 +219,7 @@ public class TestSqlArrays {
     }
 
     @RegisterRowMapper(SomethingMapper.class)
-    public interface WhereInDao {
+    interface WhereInDao {
         @SqlUpdate("create table something(id int, name text)")
         void createTable();
 

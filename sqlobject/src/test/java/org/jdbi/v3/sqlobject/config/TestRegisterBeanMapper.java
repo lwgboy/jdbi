@@ -70,7 +70,7 @@ public class TestRegisterBeanMapper {
                 newArticle(2, "title 2", "content 2", newComment(20, "comment 20")));
     }
 
-    public interface BlogDao extends SqlObject {
+    interface BlogDao extends SqlObject {
         @SqlQuery("select id, title from articles order by id")
         @RegisterBeanMapper(Article.class)
         List<Article> listArticleSummaries();

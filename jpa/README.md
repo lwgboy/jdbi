@@ -51,7 +51,7 @@ Something result = handle.select("select * from Something where id = ?", id)
 ```
 
 ```java
-public interface SomethingDAO {
+interface SomethingDAO {
 
     @SqlQuery("select * from Something where id = :id")
     Something get(@Bind("id") long id);
@@ -64,7 +64,7 @@ public interface SomethingDAO {
 Use `@BindJpa` instead of `@BindBean` to bind annotated classes.
 
 ```java
-public interface SomethingDAO {
+interface SomethingDAO {
 
     @SqlUpdate("update something set name = :s.name where id = :s.id")
     void update(@BindJpa("s") Something something);

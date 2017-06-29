@@ -24,7 +24,7 @@ public class SqlObjectTest
 
     // tag::defn[]
     @RegisterRowMapper(SomethingMapper.class)
-    public interface SomethingDao
+    interface SomethingDao
     {
         @SqlUpdate("INSERT INTO something (id, name) VALUES (:s.id, :s.name)")
         int insert(@BindBean("s") Something s);

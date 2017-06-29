@@ -28,7 +28,7 @@ import org.jdbi.v3.sqlobject.customizer.internal.TimestampedFactory;
  * Common use cases:
  * <pre>
  * <code>
- * public interface PersonDAO {
+ * interface PersonDAO {
  *      &#64;SqlUpdate("INSERT INTO people(id, firstName, lastName, email, created, modified) VALUES (:p.id, :p.firstName, :p.lastName, :p.email, :now, :now)")
  *      &#64;Timestamped
  *      &#64;GetGeneratedKeys

@@ -58,7 +58,7 @@ public class PluginTest {
         }
     }
 
-    public interface ThingDao {
+    interface ThingDao {
         @SqlUpdate("insert into something (id, name) values (:id, :name)")
         void insert(@BindJpa Thing thing);
 

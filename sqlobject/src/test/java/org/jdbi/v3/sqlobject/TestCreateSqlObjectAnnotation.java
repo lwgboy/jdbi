@@ -121,7 +121,7 @@ public class TestCreateSqlObjectAnnotation
         dbRule.getJdbi().open().attach(BogusSqlUpdateDao.class);
     }
 
-    public interface BogusSqlUpdateDao {
+    interface BogusSqlUpdateDao {
         @SqlUpdate("select name from something")
         List<String> getNames();
     }
@@ -135,7 +135,7 @@ public class TestCreateSqlObjectAnnotation
         dbRule.getJdbi().open().attach(BogusSqlBatchDao.class);
     }
 
-    public interface BogusSqlBatchDao {
+    interface BogusSqlBatchDao {
         @SqlBatch("insert into table (a) values (:a)")
         int getNames(@Bind("a") String a);
     }

@@ -77,7 +77,7 @@ public class TestUseConfiguredDefaultParameterCustomizerFactory
 
 
     @RegisterRowMapper(SomethingMapper.class)
-    public interface SomethingDao
+    interface SomethingDao
     {
 
         @SqlQuery("select id, name from something where name = :mybind1 and id = :mybind0")

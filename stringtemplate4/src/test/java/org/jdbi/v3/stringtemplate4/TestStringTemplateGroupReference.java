@@ -50,7 +50,7 @@ public class TestStringTemplateGroupReference {
     }
 
     @UseStringTemplateSqlLocator
-    public interface Dao {
+    interface Dao {
         @SqlUpdate
         void insert(long id, String name);
 

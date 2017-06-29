@@ -49,7 +49,7 @@ public class TestRegisterColumnMapper {
                 ValueTypeEntity.of(StringValue.of("bar"), LongValue.of(2L)));
     }
 
-    public interface TestDao {
+    interface TestDao {
         @SqlQuery("select string_value from column_mappers")
         @RegisterColumnMapper(StringValueColumnMapper.class)
         List<StringValue> listX();

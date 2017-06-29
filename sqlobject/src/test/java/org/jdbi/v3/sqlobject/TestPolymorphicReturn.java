@@ -55,7 +55,7 @@ public class TestPolymorphicReturn {
 
 
     @RegisterBeanMapper(Sheep.class)
-    public interface SheepDao {
+    interface SheepDao {
         @RegisterBeanMapper(FlyingSheep.class)
         @SqlQuery("select name, intValue as numWings from something where name=:name")
         <T extends Sheep> T get(@MapTo Class<T> klass, String name);

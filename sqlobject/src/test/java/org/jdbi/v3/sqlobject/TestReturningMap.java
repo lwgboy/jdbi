@@ -58,7 +58,7 @@ public class TestReturningMap {
                 entry("bar", "xyz"));
     }
 
-    public interface KeyValueDao {
+    interface KeyValueDao {
         @SqlUpdate("create table config (key varchar, value varchar)")
         void createTable();
 
@@ -90,7 +90,7 @@ public class TestReturningMap {
                 entry(4, new User(4, "dilbert")));
     }
 
-    public interface UniqueIndexDao {
+    interface UniqueIndexDao {
         @SqlUpdate("create table user (id int, name varchar)")
         void createTable();
 
@@ -145,7 +145,7 @@ public class TestReturningMap {
                         .build());
     }
 
-    public interface JoinRowDao {
+    interface JoinRowDao {
         @SqlUpdate("create table user (id int, name varchar)")
         void createUserTable();
 

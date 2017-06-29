@@ -121,7 +121,7 @@ public class TestSqlMethodDecorators {
         invocations.get().add(value);
     }
 
-    public interface Dao {
+    interface Dao {
         @Foo
         @Bar
         @CustomSqlMethod

@@ -29,7 +29,7 @@ public class TestGetGeneratedKeys
     @Rule
     public H2DatabaseRule dbRule = new H2DatabaseRule().withPlugin(new SqlObjectPlugin());
 
-    public interface DAO
+    interface DAO
     {
         @SqlUpdate("insert into something (name) values (:name)")
         @GetGeneratedKeys
@@ -40,7 +40,7 @@ public class TestGetGeneratedKeys
 
         @SqlUpdate("insert into something (name) values (:it)")
         @GetGeneratedKeys
-        public String generatedKeyReturnType(@Bind String name);
+        String generatedKeyReturnType(@Bind String name);
     }
 
     @Test

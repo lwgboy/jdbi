@@ -39,7 +39,7 @@ public class TestGetGeneratedKeysHsqlDb {
         db.useHandle(handle -> handle.execute("create table something (id identity primary key, name varchar(32))"));
     }
 
-    public interface DAO {
+    interface DAO {
         @SqlUpdate("insert into something (name) values (:name)")
         @GetGeneratedKeys
         long insert(String name);

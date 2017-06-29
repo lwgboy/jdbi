@@ -92,7 +92,7 @@ public class GeneratedKeysTest {
         });
     }
 
-    public interface UserDao {
+    interface UserDao {
         @SqlBatch("INSERT INTO users (name) VALUES(?)")
         @GetGeneratedKeys
         List<User> createUsers(String... names);

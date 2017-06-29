@@ -217,7 +217,7 @@ public class TestBatching
         int[] insertBeans(); // whoops, no parameters at all!
     }
 
-    public interface BooleanBatchDao {
+    interface BooleanBatchDao {
         @SqlBatch("insert into something (id, name) values (:id, :name)")
         boolean[] insert(@BindBean Something... values);
 

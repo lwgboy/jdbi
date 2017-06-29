@@ -131,7 +131,7 @@ public class TestHStore {
     }
 
 
-    public interface CampaignDao {
+    interface CampaignDao {
 
         @SqlQuery("select caps from campaigns where id=:id")
         @SingleValue

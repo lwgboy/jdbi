@@ -58,7 +58,7 @@ public class TestBindBean {
         assertThat(dao.getName(2)).isEqualTo("Rob");
     }
 
-    public interface Dao {
+    interface Dao {
         @SqlUpdate("update something set name=:name where id=:id")
         void update(@BindBean Something thing);
 

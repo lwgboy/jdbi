@@ -73,7 +73,7 @@ public class IntroductionTest {
 
     // tag::sqlobject-declaration[]
     // Define your own declarative interface
-    public interface UserDao {
+    interface UserDao {
         @SqlUpdate("CREATE TABLE user (id INTEGER PRIMARY KEY, name VARCHAR)")
         void createTable();
 

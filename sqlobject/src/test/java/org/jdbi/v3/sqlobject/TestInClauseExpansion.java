@@ -50,7 +50,7 @@ public class TestInClauseExpansion
         assertThat(dao.findIdsForNames(asList(1, 2))).containsExactly("Brian", "Jeff");
     }
 
-    public interface DAO
+    interface DAO
     {
         @SqlQuery("select name from something where id in (<names>)")
         ImmutableSet<String> findIdsForNames(@BindList List<Integer> names);

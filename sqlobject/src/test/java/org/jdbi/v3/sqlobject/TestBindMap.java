@@ -149,7 +149,7 @@ public class TestBindMap {
         }
     }
 
-    public interface Dao {
+    interface Dao {
         @SqlUpdate("update something set name=:name where id=:id")
         void update(@Bind int id, @BindMap Map<Object, Object> map);
 

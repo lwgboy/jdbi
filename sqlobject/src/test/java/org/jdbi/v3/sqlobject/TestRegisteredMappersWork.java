@@ -43,7 +43,7 @@ public class TestRegisteredMappersWork
     public H2DatabaseRule dbRule = new H2DatabaseRule().withPlugin(new SqlObjectPlugin());
 
 
-    public interface BooleanDao {
+    interface BooleanDao {
         @SqlQuery("select 1+1 = 2")
         boolean fetchABoolean();
     }

@@ -1330,7 +1330,7 @@ corresponding `?` argument marker in the SQL statement:
 
 [source,java]
 ----
-public interface UserDao {
+interface UserDao {
   @SqlUpdate("insert into users (id, name) values (?, ?)")
   void insert(long id, String name);
 }
@@ -2023,7 +2023,7 @@ statement locator, similar to first example above.
 ----
 package com.foo;
 
-public interface AccountDao {
+interface AccountDao {
   @SqlQuery("select id, name " +
             "from account " +
             "order by <if(sort)> <sortBy>, <endif> id")
@@ -2040,7 +2040,7 @@ locator, and loads SQL from a StringTemplate group file on the classpath:
 ----
 package com.foo;
 
-public interface AccountDao {
+interface AccountDao {
   @SqlQuery
   @UseStringTemplateSqlLocator
   List<Account> selectAll(@Define boolean sort,
@@ -2059,7 +2059,7 @@ used. This can be overridden on the `@Sql___` annotation:
 ----
 package com.foo;
 
-public interface AccountDao {
+interface AccountDao {
   @SqlQuery("listSorted")
   @UseStringTemplateSqlLocator
   List<Account> selectAll(@Define boolean sort,

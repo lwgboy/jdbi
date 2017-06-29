@@ -26,7 +26,9 @@ public class TestSqlObjectFactory {
     public void accepts() {
         assertThat(factory.accepts(NotASqlObject.class)).isFalse();
 
-        assertThatThrownBy(() -> factory.accepts(NonPublicSqlObject.class))
+        assertThat(factory.accepts(NonPublicSqlObject.class)).isTrue();
+
+        assertThatThrownBy(() -> factory.accepts(NonPublicWithDefaultMethods.class))
                 .hasMessageContaining("must be public");
 
         assertThatThrownBy(() -> factory.accepts(SqlObjectClass.class))
@@ -40,8 +42,20 @@ public class TestSqlObjectFactory {
         abstract String foo(String id);
     }
 
-    interface NonPublicSqlObject extends SqlObject {
+    interface NonPublicSqlObject {
+        @SqlQuery("select foo from bar")
+        String foo();
     }
+
+    interface NonPublicWithDefaultMethods {
+        @SqlQuery("select foo from bar")
+        String foo();
+
+        default String bar() {
+            return "bar";
+        }
+    }
+
 
     public abstract class SqlObjectClass implements SqlObject {
     }

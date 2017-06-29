@@ -95,7 +95,7 @@ public class TransactionTest {
         assertThat(handle.attach(UserDao.class).findUserById(3).map(u -> u.name)).contains("Charlie");
     }
 
-    public interface UserDao {
+    interface UserDao {
         @SqlQuery("SELECT * FROM users WHERE id=:id")
         @Transaction
         Optional<User> findUserById(int id);
@@ -109,7 +109,7 @@ public class TransactionTest {
         assertThat(handle.attach(UserDao.class).findUserById(5).map(u -> u.name)).contains("Echo");
     }
 
-    public interface UserDao2 extends UserDao {
+    interface UserDao2 extends UserDao {
         // tag::sqlObjectTransactionIsolation[]
         @SqlUpdate("INSERT INTO USERS (name) VALUES (:name)")
         @Transaction(TransactionIsolationLevel.READ_COMMITTED)
@@ -159,7 +159,7 @@ public class TransactionTest {
     }
 
     // tag::serializable[]
-    public interface IntListDao {
+    interface IntListDao {
         @SqlUpdate("CREATE TABLE ints (value INTEGER)")
         void create();
 

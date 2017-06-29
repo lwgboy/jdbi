@@ -44,7 +44,7 @@ public class TestFieldMapper
     }
 
     @RegisterColumnMapper(ValueTypeMapper.class)
-    public interface TestDao
+    interface TestDao
     {
         @SqlQuery("select * from testBean")
         @RegisterFieldMapper(TestObject.class)

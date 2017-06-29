@@ -74,7 +74,7 @@ public class TestOptional {
     }
 
     @RegisterRowMapper(SomethingMapper.class)
-    public interface DAO {
+    interface DAO {
         @SqlUpdate("insert into something (id, name) values (:id, :name)")
         void insert(@Bind("id") long id, @Bind("name") String name);
 

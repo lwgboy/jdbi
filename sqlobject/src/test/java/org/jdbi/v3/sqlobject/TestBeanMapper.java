@@ -55,7 +55,7 @@ public class TestBeanMapper
     }
 
     @RegisterColumnMapper(ValueTypeMapper.class)
-    public interface TestDao
+    interface TestDao
     {
         @SqlQuery("select * from testBean")
         @RegisterBeanMapper(TestBean.class)

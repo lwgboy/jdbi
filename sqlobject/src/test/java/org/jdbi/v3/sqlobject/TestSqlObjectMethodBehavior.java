@@ -54,7 +54,7 @@ public class TestSqlObjectMethodBehavior
         anotherDao = factory.attach(UselessDao.class, handleSupplier);
     }
 
-    public interface UselessDao extends SqlObject
+    interface UselessDao extends SqlObject
     {
         void finalize();
     }

@@ -25,6 +25,7 @@ import java.util.WeakHashMap;
 import org.jdbi.v3.core.extension.HandleSupplier;
 
 class DefaultMethodHandler implements Handler {
+    public static final int ALL_MODES = MethodHandles.Lookup.PRIVATE | MethodHandles.Lookup.PACKAGE | MethodHandles.Lookup.PROTECTED | MethodHandles.Lookup.PUBLIC;
     private static final Map<Class<?>, MethodHandles.Lookup> privateLookups = synchronizedMap(new WeakHashMap<>());
 
     private static MethodHandles.Lookup lookupFor(Class<?> clazz) {
@@ -47,7 +48,7 @@ class DefaultMethodHandler implements Handler {
                 if (!constructor.isAccessible()) {
                     constructor.setAccessible(true);
                 }
-                return constructor.newInstance(type, MethodHandles.Lookup.PRIVATE);
+                return constructor.newInstance(type, ALL_MODES);
             } catch (ReflectiveOperationException e) {
                 throw new RuntimeException(e);
             }

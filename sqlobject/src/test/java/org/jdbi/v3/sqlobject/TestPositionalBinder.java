@@ -87,7 +87,7 @@ public class TestPositionalBinder {
                 .hasMessageContaining("Cannot mix named and positional parameters in a SQL statement");
     }
 
-    public interface SomethingDao {
+    interface SomethingDao {
 
         @SqlQuery("select name from something where something_id=?")
         String findNameById(int i);

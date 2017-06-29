@@ -54,7 +54,7 @@ public class TestRegisterRowMapperFactory {
                 .containsExactly(LongValue.of(1L), LongValue.of(2L));
     }
 
-    public interface TestDao {
+    interface TestDao {
         @SqlQuery("select string_value from column_mappers")
         @RegisterRowMapperFactory(StringValueRowMapperFactory.class)
         List<StringValue> listX();

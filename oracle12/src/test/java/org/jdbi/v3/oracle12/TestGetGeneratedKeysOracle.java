@@ -52,7 +52,7 @@ public class TestGetGeneratedKeysOracle {
         }
     }
 
-    public interface DAO {
+    interface DAO {
         @SqlUpdate("insert into something (name, id) values (:name, something_id_sequence.nextval)")
         @GetGeneratedKeys("id")
         long insert(@Bind("name") String name);

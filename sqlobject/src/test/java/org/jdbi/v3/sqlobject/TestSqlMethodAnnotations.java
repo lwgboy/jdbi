@@ -59,7 +59,7 @@ public class TestSqlMethodAnnotations
         assertThat(dao.foo()).isEqualTo("foo");
     }
 
-    public interface Dao {
+    interface Dao {
         @Foo
         String foo();
     }

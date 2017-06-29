@@ -54,9 +54,11 @@ public class SqlObjectFactory implements ExtensionFactory {
                 throw new IllegalArgumentException("SQL Objects are only supported for interfaces.");
             }
 
-            if (!Modifier.isPublic(extensionType.getModifiers())) {
-                throw new IllegalArgumentException("SQL Object types must be public.");
-            }
+//            if (!Modifier.isPublic(extensionType.getModifiers())
+//                    && Stream.of(extensionType.getMethods()).anyMatch(Method::isDefault)) {
+//
+//                throw new IllegalArgumentException("SQL Object types with default methods must be public.");
+//            }
 
             return true;
         }

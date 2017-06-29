@@ -69,7 +69,7 @@ public class TestRegisterObjectArgumentFactory {
                 ValueTypeEntity.of(StringValue.of("bar"), LongValue.of(20)));
     }
 
-    public interface TestDao {
+    interface TestDao {
         @SqlUpdate("insert into serialized_types (string_value) values (?)")
         @RegisterObjectArgumentFactory(StringValue.class)
         void insertStringValue(StringValue value);

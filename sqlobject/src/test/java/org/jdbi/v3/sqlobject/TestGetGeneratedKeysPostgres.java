@@ -115,7 +115,7 @@ public class TestGetGeneratedKeysPostgres
         });
     }
 
-    public interface DAO {
+    interface DAO {
         @SqlUpdate("create sequence id_sequence INCREMENT 1 START WITH 100")
         void createSequence();
 
@@ -134,7 +134,7 @@ public class TestGetGeneratedKeysPostgres
         String findNameById(@Bind long id);
     }
 
-    public interface UseRowMapperDao {
+    interface UseRowMapperDao {
         @SqlUpdate("create table something (id serial, name varchar(50), created_on timestamp default now())")
         void createTable();
 
@@ -149,7 +149,7 @@ public class TestGetGeneratedKeysPostgres
         List<IdCreateTime> insertBatch(String... name);
     }
 
-    public interface RegisterRowMapperDao {
+    interface RegisterRowMapperDao {
         @SqlUpdate("create table something (id serial, name varchar(50), created_on timestamp default now())")
         void createTable();
 

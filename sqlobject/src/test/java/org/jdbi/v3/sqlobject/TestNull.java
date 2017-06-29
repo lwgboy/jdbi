@@ -51,7 +51,7 @@ public class TestNull {
         assertThat(dao.findNameById(3)).isNull();
     }
 
-    public interface DAO {
+    interface DAO {
 
         @SqlUpdate("insert into something (id, name) values (:id, :name)")
         void insert(@Bind("id") long id, @Bind("name") String name);
