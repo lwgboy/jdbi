@@ -10,6 +10,8 @@
     array attributes.
   - [breaking] Moved and renamed MapEntryMapper.Config to top-level class
     MapEntryMappers
+  - [breaking] split Handle.cleanupHandle() into cleanupHandleCommit() and *Rollback()
+  - [breaking] remove TransactionStatus enum
 
 3.0.0-beta1
   - [breaking] Refactored SqlStatementCustomizerFactory.createForParameter(...)
